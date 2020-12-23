@@ -1,1 +1,162 @@
-<h1>HomePage</h1>
+{% extends 'base.html' %} 
+{% load static %}
+
+{% block content  %}
+
+
+
+
+
+<!-- content-wrapper start -->
+<div class="content-wrap">
+    <section class="banner">
+        <div class="container">
+            <div class="banner-content">
+                <div class="heading">
+                    <h1 class="text-white lh-1 mb-3 text-uppercase">
+                        <span class="d-block" data-animate="fadeInLeft">Next stop...</span>
+                        <span class="d-block font-weight-light" data-animate="fadeInLeft">a job you love</span>
+                    </h1>
+                    <p class="font-size-h5 lh-12 mb-0" data-animate="fadeInRight">
+                        Find the job that fits your life.
+                    </p>
+                </div>
+                <div class="form-search" data-animate="fadeInUp">
+                    <form>
+                        <div class="row align-items-end">
+                            <div class=" col-xl-6 mb-4 mb-xl-0">
+                                <label for="key-word"
+                                        class="text-uppercase text-white font-weight-bold">What</label>
+                                <div class="input-group dropdown show bg-white rounded">
+                                    <input type="text" autocomplete="off" id="key-word" name="key-word"
+                                            class="form-control border-0 form-control-lg"
+                                            placeholder="Job tittle, skills or company" data-toggle="dropdown"
+                                            aria-haspopup="true">
+                                    <a href="#" class="input-group-append text-decoration-none">
+                                        <i class="fal fa-chevron-down"></i>
+                                    </a>
+                                    <ul class="dropdown-menu form-search-ajax" aria-labelledby="key-word">
+                                        <li class="dropdown-item item">
+                                            <a href="#" class="link-hover-dark-white">
+                                                <svg class="icon icon-pizza">
+                                                    <use xlink:href="#icon-pizza"></use>
+                                                </svg>
+                                                <span class="font-size-md">Foods & Restaurants</span>
+                                            </a>
+                                        </li>
+                                        <li class="dropdown-item item">
+                                            <a href="#" class="link-hover-dark-white">
+                                                <svg class="icon icon-bed">
+                                                    <use xlink:href="#icon-bed"></use>
+                                                </svg>
+                                                <span class="font-size-md">Hotels & Resorts</span>
+                                            </a>
+                                        </li>
+                                        <li class="dropdown-item item">
+                                            <a href="#" class="link-hover-dark-white">
+                                                <svg class="icon icon-pharmaceutical">
+                                                    <use xlink:href="#icon-pharmaceutical"></use>
+                                                </svg>
+                                                <span class="font-size-md">Healths & Medicals</span>
+                                            </a>
+                                        </li>
+                                        <li class="dropdown-item item">
+                                            <a href="#" class="link-hover-dark-white">
+                                                <svg class="icon icon-cog">
+                                                    <use xlink:href="#icon-cog"></use>
+                                                </svg>
+                                                <span class="font-size-md">Services</span>
+                                            </a>
+                                        </li>
+                                        <li class="dropdown-item item">
+                                            <a href="#" class="link-hover-dark-white">
+                                                <svg class="icon icon-car">
+                                                    <use xlink:href="#icon-car"></use>
+                                                </svg>
+                                                <span class="font-size-md">Automotive</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class=" col-xl-4 mb-4 mb-xl-0">
+                                <label for="region"
+                                        class="text-uppercase text-white font-weight-bold">where</label>
+                                <div class="input-group dropdown bg-white rounded">
+                                    <input type="text" autocomplete="off" id="region" name="region"
+                                            class="form-control font-size-lg border-0 form-control-lg"
+                                            placeholder="Town, city or postcode" data-toggle="dropdown"
+                                            aria-haspopup="true">
+                                    <a href="#" class="input-group-append text-decoration-none">
+                                        <i class="fal fa-chevron-down"></i>
+                                    </a>
+                                    <ul class="dropdown-menu form-search-ajax" aria-labelledby="region">
+                                        <li class="dropdown-item item">
+                                            <a href="#" class="link-hover-dark-white">
+                                                Austin
+                                            </a>
+                                        </li>
+                                        <li class="dropdown-item item">
+                                            <a href="#" class="link-hover-dark-white">
+                                                Boston
+                                            </a>
+                                        </li>
+                                        <li class="dropdown-item item">
+                                            <a href="#" class="link-hover-dark-white">
+                                                Chicago
+                                            </a>
+                                        </li>
+                                        <li class="dropdown-item item">
+                                            <a href="#" class="link-hover-dark-white">
+                                                Denver
+                                            </a>
+                                        </li>
+                                        <li class="dropdown-item item">
+                                            <a href="#" class="link-hover-dark-white">
+                                                Los Angeles
+                                            </a>
+                                        </li>
+                                        <li class="dropdown-item item">
+                                            <a href="#" class="link-hover-dark-white">
+                                                New York
+                                            </a>
+                                        </li>
+                                        <li class="dropdown-item item">
+                                            <a href="#" class="link-hover-dark-white">
+                                                San Francisco
+                                            </a>
+                                        </li>
+                                        <li class="dropdown-item item">
+                                            <a href="#" class="link-hover-dark-white">
+                                                Seattle
+                                            </a>
+                                        </li>
+                                        <li class="dropdown-item item">
+                                            <a href="#" class="link-hover-dark-white">
+                                                Washington
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class=" col-xl-2">
+                                <button type="submit"
+                                        class="btn btn-primary font-weight-bold font-size-h5 btn-block btn-icon-left btn-lg lh-16">
+                                    <i
+                                            class="fal fa-search"></i>Search
+                                </button>
+                            </div>
+
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </section>
+</div>
+<!-- .content-wrapper end -->
+
+
+
+   {% endblock content %}
