@@ -11,6 +11,6 @@ class DirectoryListView(ListView):
     model = Person
     template_name = 'person_list.html'
 
-class ListingDetailView(DetailView):
+class DirectoryDetailView(DetailView):
     model = Person
     template_name = "person_detail.html"
