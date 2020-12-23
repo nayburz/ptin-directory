@@ -1,5 +1,5 @@
 
-from django.views.generic import TemplateView, ListView
+from django.views.generic import TemplateView, ListView, DetailView
 
 from .models import Person
 
@@ -10,3 +10,7 @@ class HomePageView(TemplateView):
 class DirectoryListView(ListView):
     model = Person
     template_name = 'person_list.html'
+
+class ListingDetailView(DetailView):
+    model = Person
+    template_name = "person_detail.html"

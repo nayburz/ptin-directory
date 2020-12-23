@@ -1,6 +1,8 @@
 from django.urls import path
 
-from .views import HomePageView, DirectoryListView
+from .views import HomePageView, DirectoryListView, DirectoryDetailPage
+
+app_name = 'directory'
 
 urlpatterns = [
     
