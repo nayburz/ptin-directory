@@ -1,0 +1,9 @@
+<h1>PTIN List</h1>
+
+<ul>
+  {% for person in person_list %}
+    <li>
+      {{ person.full_name }}, {{ person.city }}
+    </li>
+  {% endfor %}
+</ul>
