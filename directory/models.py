@@ -27,7 +27,7 @@ class Person(models.Model):
     city = models.CharField(
         max_length=255, blank=True, help_text="Enter your city.")
     state = models.CharField(max_length=2)
-    state = models.CharField(max_length=50)
+    zipcode = models.CharField(max_length=50)
     website = models.URLField(
         max_length=255, blank=True, help_text="Enter your website or link for letting clients get in touch")
     profession = models.CharField(max_length=50, blank=True)
@@ -65,7 +65,7 @@ class Person(models.Model):
     # ABSOLUTE URL METHOD
     def get_absolute_url(self):
         """Returns the url to access a particular detail listing page."""
-        return reverse('directory:person_detail', args=[str(self.id)])
+        return reverse('directory:person-detail', args=[str(self.id)])
 
     # OTHER METHODS
     def full_name(self):
@@ -79,6 +79,10 @@ class Person(models.Model):
     def city_state(self):
         """String for representing the Model object."""
         return f'{self.city}, {self.state}'
+    
+    def city_state_zipcode(self):
+        """String for representing the Model object."""
+        return f'{self.city}, {self.state} {self.zipcode}'
 
     def url_text(self):
         parsed_url = urlparse(self.website)

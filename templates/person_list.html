@@ -1,9 +1,67 @@
-<h1>PTIN List</h1>
+{% extends 'base.html' %} 
+{% load static %}
 
-<ul>
-  {% for person in person_list %}
-    <li>
-      {{ person.full_name }}, {{ person.city }}
-    </li>
-  {% endfor %}
-</ul>
+{% block content  %}	
+  
+  <!-- #wrapper-content start -->
+		<div id="wrapper-content" class="wrapper-content bg-gray-04 py-0">
+			<div class="container">
+				<ul class="breadcrumb breadcrumb-style-02 py-7">
+					<li class="breadcrumb-item"><a href="#">Home</a></li>
+					<li class="breadcrumb-item">Sidebar Listing - Grid View</li>
+				</ul>
+				<div class="page-container row">
+					<div class="page-content col-12 col-lg-8">
+						<div class="explore-filter d-lg-flex align-items-center d-block">
+							<div class="text-dark font-weight-semibold font-size-md mb-4 mb-lg-0">56 Results found</div>
+							<div class="form-filter d-flex align-items-center ml-auto">
+								<div class="form-group row no-gutters align-items-center">
+									<label for="sort-by" class="col-sm-3 text-dark font-size-md font-weight-semibold mb-0">Sort by</label>
+									<div class="select-custom col-sm-9">
+										<select id="sort-by" class="form-control">
+											<option value="0">State</option>
+											<option value="1">Service</option>
+											<option value="1">Latest</option>
+										</select>
+									</div>
+								</div>
+							</div>
+						</div>
+            {% for person in person_list|slice:":12" %}
+						<div class="store-listing-style store-listing-style-02">
+							<div class="mb-6">
+								<div class="store media align-items-stretch bg-white job-store">
+									<a href="{{ person.get_absolute_url }}" class="store-image"
+									     style="background-image: url('{% static 'images/empty_profile.png' %}')">
+									</a>
+									<div class="media-body px-0 px-md-4 pt-4 pt-lg-0">
+										<div class="d-flex align-items-center lh-1">
+											<span class="text-gray">MME Studio</span>
+										</div>
+
+										<a href="{{ person.get_absolute_url }}"
+										   class="h5  text-dark d-inline-block store-name"><span
+												class="letter-spacing-25">{{ person.full_name }}</span> </a>
+										<div class="row mb-3">
+											<div class="col-lg-6">
+												<i class="fal fa-map-marker-alt"></i><span
+													class="d-inline-block ml-2">{{ person.city_state }}</span>
+											</div>
+										</div>
+										<div class="border-top pt-2 px-0 pb-0">
+											They specialize in makgeolli at this Korean-style pub in Seorae
+											Village...
+										</div>
+									</div>
+								</div>
+							</div>
+		        </div>
+            {% endfor %}
+
+          </div>
+        </div>
+      </div>
+	</div>
+		<!-- #wrapper-content end -->
+
+   {% endblock content %}

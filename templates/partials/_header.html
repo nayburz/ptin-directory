@@ -22,39 +22,12 @@
 						</div> {% endcomment %}
 
 						<div class="collapse navbar-collapse d-xl-flex align-items-center" id="navbar-main-menu">
-							<a class="navbar-brand d-none d-xl-block mr-0 mr-xl-10" href="home-jobs.html">
+							<a class="navbar-brand d-none d-xl-block mr-0 mr-xl-10" href="{% url 'directory:home' %}">
 								FIND A TAX PREPARER
 							</a>
 							<ul class="navbar-nav">
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#">By State <span class="caret"><i
-                                            class="fas fa-angle-down"></i></span></a>
-                                    <ul class="sub-menu x-animated x-fadeInUp">
-                                        <li class="nav-item"><a class="nav-link" href="../../index.html">main</a>
-                                        </li>
-                                        <li class="nav-item"><a class="nav-link"
-                                                                href="../../demo/automotive-service/home-automotive-services.html">
-                                            automotive service</a></li>
-                                        <li class="nav-item"><a class="nav-link"
-                                                                href="../../demo/food-and-restaurant/home-food-and-restaurant.html">
-                                            food and restaurant</a></li>
-                                        <li class="nav-item"><a class="nav-link"
-                                                                href="../../demo/health-and-medical/home-health-and-medical.html">
-                                            health and medical</a></li>
-                                        <li class="nav-item"><a class="nav-link"
-                                                                href="../../demo/hotel/home-hotels.html">hotel</a>
-                                        </li>
-                                        <li class="nav-item"><a class="nav-link" href="../../demo/job/home-jobs.html">jobs</a>
-                                        </li>
-                                        <li class="nav-item"><a class="nav-link"
-                                                                href="../../demo/service-finder/home-services-finder.html">
-                                            service finder</a></li>
-                                        <li class="nav-item"><a class="nav-link"
-                                                                href="../../demo/shopping/home-shopping.html">
-                                            shopping</a></li>
-                                    </ul>
-                                </li>
-                                
+
+
                                 {% comment %} <li class="nav-item">
                                     <a class="nav-link" href="#">Pages
                                         <span class="caret"><i
@@ -107,33 +80,45 @@
                                         </div>
                                     </div>
                                 </li> {% endcomment %}
+
+
                                 <li class="nav-item">
-                                    <a class="nav-link" href="explore-sidebar-list.html">Explore</a>
+                                    <a class="nav-link" href="{% url 'directory:directory-list' %}">Directory</a>
                                 </li>
+
+                                
                                 <li class="nav-item">
-                                    <a class="nav-link" href="blog-listing-grid.html">Blog</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#">Docs <span class="caret"><i
+                                    <a class="nav-link" href="#">By State <span class="caret"><i
                                             class="fas fa-angle-down"></i></span></a>
                                     <ul class="sub-menu x-animated x-fadeInUp">
-                                        <li class="nav-item">
-                                            <a class="nav-link"
-                                               href="../../document/introduction.html">Documentation</a>
+                                        <li class="nav-item"><a class="nav-link" href="../../index.html">main</a>
                                         </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="../../starter/introduction.html">Get started
-                                            </a>
+                                        <li class="nav-item"><a class="nav-link"
+                                                                href="../../demo/automotive-service/home-automotive-services.html">
+                                            automotive service</a></li>
+                                        <li class="nav-item"><a class="nav-link"
+                                                                href="../../demo/food-and-restaurant/home-food-and-restaurant.html">
+                                            food and restaurant</a></li>
+                                        <li class="nav-item"><a class="nav-link"
+                                                                href="../../demo/health-and-medical/home-health-and-medical.html">
+                                            health and medical</a></li>
+                                        <li class="nav-item"><a class="nav-link"
+                                                                href="../../demo/hotel/home-hotels.html">hotel</a>
                                         </li>
+                                        <li class="nav-item"><a class="nav-link" href="../../demo/job/home-jobs.html">jobs</a>
+                                        </li>
+                                        <li class="nav-item"><a class="nav-link"
+                                                                href="../../demo/service-finder/home-services-finder.html">
+                                            service finder</a></li>
+                                        <li class="nav-item"><a class="nav-link"
+                                                                href="../../demo/shopping/home-shopping.html">
+                                            shopping</a></li>
                                     </ul>
                                 </li>
                             </ul>
+
+                            
 							<div class="header-customize justify-content-end align-items-center d-none d-xl-flex ml-auto">
-								<div class="header-customize-item signal">
-									<svg class="icon icon-wifi-signal-symbol">
-										<use xlink:href="#icon-wifi-signal-symbol"></use>
-									</svg>
-								</div>
 								<div class="header-customize-item">
 									<a href="#login-popup" class="link text-uppercase" data-gtf-mfp="true"
 									   data-mfp-options='{"type":"inline"}'>
@@ -144,19 +129,6 @@
 								</div>
 								<div class="header-customize-item language">
 									<div class="dropdown show">
-										<a class="dropdown-toggle d-flex align-items-center font-weight-semibold link"
-										   href="#"
-										   role="button"
-										   id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
-										   aria-expanded="false">
-											EN
-										</a>
-
-										<div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-											<a class="dropdown-item" href="#">FR</a>
-											<a class="dropdown-item" href="#">CH</a>
-											<a class="dropdown-item" href="#">KO</a>
-										</div>
 									</div>
 								</div>
 								<div class="header-customize-item button">

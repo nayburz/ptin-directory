@@ -8,5 +8,5 @@ urlpatterns = [
     
     path('', HomePageView.as_view(), name='home'),
     path('ptin-directory/', DirectoryListView.as_view(), name='directory-list'),
-    path('ptin-directory/<int:pk>', DirectoryDetailView.as_view(), name='directory-detail'),
+    path('ptin-directory/<int:pk>', DirectoryDetailView.as_view(), name='person-detail'),
 ]

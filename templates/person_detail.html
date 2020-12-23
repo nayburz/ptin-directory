@@ -1,0 +1,116 @@
+{% extends 'base.html' %} 
+{% load static %}
+
+{% block content  %}	
+        
+        <!-- #wrapper-content start -->
+		<div id="wrapper-content" class="wrapper-content pb-0 pt-0 ">
+			<div class="page-wrapper bg-white">
+				<div class="container">
+					<div class="page-title pt-7 pb-8 border-bottom mb-8">
+						<ul class="breadcrumb breadcrumb-style-03 mb-5">
+							<li class="breadcrumb-item"><a href="#">Home</a></li>
+							<li class="breadcrumb-item"><a href="#">Tax Preparers </a></li>
+							<li class="breadcrumb-item"> {{ person.full_name }}</li>
+						</ul>
+						<div class="explore-details-top d-flex flex-wrap flex-lg-nowrap bg-white pb-2">
+							<div class="store">
+								<div class="d-flex flex-wrap">
+									<h2 class="mr-2 mb-2">{{ person.full_name }}
+									</h2>
+								</div>
+								<div class="d-flex flex-wrap mx-n3">
+									<div class="border-right px-3">
+										<span>
+										{{ person.address }}
+                                        <br>
+                                        {{ person.city_state_zipcode }}
+                                        <br>
+                                        United States
+									    </span>
+                                    </div>
+									<div class="px-3">
+										<span class="fab fa-linkedin"></span>
+                                        <span class="fab fa-google-plus"></span>
+                                        <span class="fab fa-twitter"></span>
+                                        <span class="fab fa-facebook"></span>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="page-container row bg-white pt-2 pb-8">
+						<div class="page-content col-xl-8 mb-9 mb-xl-0">
+							<div class="explore-details-container">
+								<div class="mb-7">
+									<h3 class="font-size-lg text-uppercase mb-6 lh-12">
+										{{ person.full_name }} - {{ person.city_state }} Tax Preparer
+									</h3>
+								</div>
+								<div class="mb-7">
+									<div class="content-listing">
+										<ul class="list-group list-group-flush list-group-borderless">
+											<li class="list-group-item p-0 bg-transparent mb-3">
+												<div class="ml-0">
+													For tax preparation in {{ person.city_state }} you can count on {{ person.full_name }}.
+                                                    {{ person.full_name }} assists taxpayers and small businesses with taxes in {{ person.city_state }}
+                                                    and the surrounding communities. 
+												</div>
+											</li>
+											<li class="list-group-item p-0 bg-transparent mb-3">
+												<div class="ml-0">
+													Whether you are an individual or a local business in or around {{ person.city_state }}, {{ person.full_name}}
+                                                    has years of valuable experience as an IRS register tax prearer. 
+												</div>
+											</li>
+											<li class="list-group-item p-0 bg-transparent mb-3">
+												<div class="ml-0">
+													Contact Adrian Neighbors, tax filing specialist in San Francisco CA, for help with your taxes.
+												</div>
+											</li>
+										</ul>
+									</div>
+								</div>
+								<div class="mb-7">
+									<h3 class="font-size-lg text-uppercase mb-6 lh-12">
+										Looking to find the best rated tax preparer in {{ person.city_state }}?
+									</h3>
+									<div class="block-content content-listing">
+										<ul class="list-group list-group-flush list-group-borderless">
+											<li class="list-group-item p-0 bg-transparent mb-3">
+												<div class="ml-0">
+													{{ person.full_name }} is a local tax preparer located in {{ person.city_state }}. {{ person.full_name }} 
+                                                    and other tax preparers located in {{ person.city_state }} will help you with tax preparation, 
+                                                    tax planning, bookkeeping, estate and trust taxes, and so much more.
+												</div>
+											</li>
+										</ul>
+									</div>
+								</div>
+								<div class="mb-7">
+									<h3 class="font-size-lg text-uppercase mb-4 lh-12">
+										Are you {{ person.full_name }}?
+									</h3>
+								    <div class="block-content content-listing">
+										<ul class="list-group list-group-flush list-group-borderless">
+											<li class="list-group-item p-0 bg-transparent mb-3">
+												<div class="ml-0">
+													<a href="#">Add your picture and update your profile now.</a>
+												</div>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="sidebar col-xl-4">
+							<div class="card p-0 infomation bg-gray mb-6 border-0">
+								<img src="{% static 'images/empty_profile.png' %}" alt="Sidebar image" class="card-img-top">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- #wrapper-content end -->
+           {% endblock content %}
