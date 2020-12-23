@@ -40,6 +40,8 @@ INSTALLED_APPS = [
 
     'directory',
 
+    'import_export',
+
   
 
 ]

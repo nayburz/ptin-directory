@@ -18,37 +18,31 @@ class Person(models.Model):
     #
 
     # DATABASE FIELDS
-    first_name = models.CharField(
-        max_length=255, help_text="Enter your first name or first initial.")
     last_name = models.CharField(
         max_length=255, help_text="Enter your last name.")
-    middle_name = models.CharField(
-        max_length=255, blank=True, help_text="Enter your middle name or intial.")
-    dba = models.CharField(
-        max_length=255, blank=True, help_text="Doing Business As")
-    website_url = models.URLField(
-        max_length=255, blank=True, help_text="Enter your website or link for letting clients get in touch")
-    email = models.EmailField(max_length=64, null=True,
-                              help_text="Enter your first name or first initial.")
-    display_email_on_profile = models.BooleanField(default=False, help_text="Check if you would like your email displayed on your directory page")
-    # photo_main = models.ImageField(
-    #     blank=True, upload_to='uploads/photos/%Y/%m/%d/', help_text="An image should be at least 300 pixels in size. It is recommended you use a company logo or professional head-shot photo.")
-    street = models.CharField(
+    first_name = models.CharField(
+        max_length=255, help_text="Enter your first name or first initial.")
+    address = models.CharField(
         max_length=255, blank=True, help_text="Enter your street address.")
     city = models.CharField(
         max_length=255, blank=True, help_text="Enter your city.")
-
+    state = models.CharField(max_length=2)
+    state = models.CharField(max_length=50)
+    website = models.URLField(
+        max_length=255, blank=True, help_text="Enter your website or link for letting clients get in touch")
+    profession = models.CharField(max_length=50, blank=True)
+    
     # TODO Locations:
     # country = 
     # state = models.CharField(choices=sorted(
     #     statenames.items()), max_length=2, blank=True, db_index=True)
-    # zipcode = 
+    
     # TODO Need to fix, not working. Use another package?
     # phone_number = PhoneNumberField(blank=True)
-    summary = models.CharField(
-        max_length=255, blank=True, help_text="One or two lines for that will be displayed in the main directory (maximum of 180 characters). Upgrading to an Enhanced entry will let you also add a much larger description.")
-    description = models.TextField(blank=True, null=True, help_text="Please write a fuller description about your, your firm and the services you offer.")
-    featured = models.BooleanField(default=False)
+    # summary = models.CharField(
+    #     max_length=255, blank=True, help_text="One or two lines for that will be displayed in the main directory (maximum of 180 characters). Upgrading to an Enhanced entry will let you also add a much larger description.")
+    # description = models.TextField(blank=True, null=True, help_text="Please write a fuller description about your, your firm and the services you offer.")
+    # featured = models.BooleanField(default=False)
 
     # TODO Social Media:
     # facebook = 
@@ -66,12 +60,12 @@ class Person(models.Model):
     # TO STRING METHOD
     def __str__(self):
         """String for representing the Model object."""
-        return f'{self.last_name}, {self.first_name} // {self.email}'
+        return f'{self.last_name}, {self.first_name}'
 
     # ABSOLUTE URL METHOD
     def get_absolute_url(self):
         """Returns the url to access a particular detail listing page."""
-        return reverse('directory:listing_detail', args=[str(self.id)])
+        return reverse('directory:person_detail', args=[str(self.id)])
 
     # OTHER METHODS
     def full_name(self):
@@ -80,7 +74,7 @@ class Person(models.Model):
 
     def full_address(self):
         """String for representing the Model object."""
-        return f'{self.street}, {self.city}'
+        return f'{self.address}, {self.city}'
 
     def city_state(self):
         """String for representing the Model object."""
