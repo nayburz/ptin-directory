@@ -1,6 +1,13 @@
 from django.urls import path
 
-from .views import HomePageView, DirectoryListView, DirectoryDetailView, SearchResultsView
+from .views import (
+    HomePageView, 
+    DirectoryListView, 
+    DirectoryDetailView, 
+    SearchResultsView, 
+    
+
+)
 
 app_name = 'directory'
 
@@ -8,7 +15,8 @@ urlpatterns = [
     
     path('', HomePageView.as_view(), name='home'),
     path('ptin-directory/', DirectoryListView.as_view(), name='directory-list'),
-    path('ptin-directory/montana/<slug:slug>', DirectoryDetailView.as_view(), name='person-detail'),
+    # path('ptin-directory/<state>/', StateView.as_view()),   
+    path('ptin-directory/<slug:slug>/', DirectoryDetailView.as_view(), name='person-detail'),
     path('search/', SearchResultsView.as_view(), name='search_results'),
     
 ]

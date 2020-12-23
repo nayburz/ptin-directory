@@ -3,6 +3,8 @@ from django.db import models
 # from states import statenames
 from django.shortcuts import reverse
 from urllib.parse import urlparse
+from django.template.defaultfilters import slugify
+
 
 
 
@@ -73,11 +75,13 @@ class Person(models.Model):
         return f'{self.last_name}, {self.first_name}'
 
     # ABSOLUTE URL METHOD
+
     def get_absolute_url(self):
         """Returns the url to access a particular detail person page via slug."""
         return reverse('directory:person-detail', kwargs={'slug': self.slug})
-        """Returns the url to access a particular detail person page via id."""
+    #     """Returns the url to access a particular detail person page via id."""
         # return reverse('directory:person-detail', args=[str(self.id)])
+
 
 
     # OTHER METHODS

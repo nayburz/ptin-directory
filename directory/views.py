@@ -3,8 +3,10 @@ from django.views.generic import TemplateView, ListView, DetailView
 from django.db.models import Q, query
 from django.db.models.functions import Concat
 from django.db.models import CharField, Value
+from django.shortcuts import get_object_or_404
 
 from .models import Person
+
 
 
 class HomePageView(TemplateView):
@@ -42,3 +44,13 @@ class SearchResultsView(ListView):
 
         )
         return query_list
+
+
+# class StateView(ListView):
+#     model = Person
+#     template_name = "state_lists.html"
+
+#     def get_queryset(self):
+#         self.state = get_object_or_404(Person, state=self.kwargs['state'])
+#         return Person.objects.filter(state=self.state)
+

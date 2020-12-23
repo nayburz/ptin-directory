@@ -4,6 +4,12 @@ change colors, font, themes, make it look different than the themeforst
 
 Search
 
+Search + State
+
 API
 
-Slugify 'first_name' + 'last_name'
+Research :URL mapping, slugify, state/city/<pk>/full_name
+
+States = might need to add model for states (same for cities).....need to do research
+
+Slugify 'first_name' + 'last_name' in Python. I am currently doing it in google sheets

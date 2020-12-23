@@ -1,6 +1,6 @@
 {% extends 'base.html' %} 
 {% load static %}
-
+{% load state_abbrv %}
 {% block content  %}	
         
         <!-- #wrapper-content start -->
@@ -9,9 +9,12 @@
 				<div class="container">
 					<div class="page-title pt-7 pb-8 border-bottom mb-8">
 						<ul class="breadcrumb breadcrumb-style-03 mb-5">
-							<li class="breadcrumb-item"><a href="#">Home</a></li>
-							<li class="breadcrumb-item"><a href="#">Tax Preparers </a></li>
-							<li class="breadcrumb-item"> {{ person.full_name }}</li>
+							<li class="breadcrumb-item"><a href="{% url 'directory:home' %}">PTINChecker</a></li>
+							<!--@TODO UPDATE-->
+							<li class="breadcrumb-item"><a href="{% url 'directory:home' %}">Tax Preparers By State </a></li>
+							<li class="breadcrumb-item"><a href="{% url 'directory:home' %}">{{ person.state }} Tax Preparer</a></li>
+							<li class="breadcrumb-item"><a href="{% url 'directory:home' %}">{{ person.city }}, {{ person.state|state_initial }} Tax Preparer</a></li>
+							<li class="breadcrumb-item"> {{ person.full_name }} - {{ person.city }} Tax Preparer</li>
 						</ul>
 						<div class="explore-details-top d-flex flex-wrap flex-lg-nowrap bg-white pb-2">
 							<div class="store">
