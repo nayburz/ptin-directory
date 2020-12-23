@@ -31,14 +31,14 @@ class Person(models.Model):
         max_length=255, blank=True, help_text="Enter your street address.")
     city = models.CharField(
         max_length=255, blank=True, help_text="Enter your city.")
-    state = models.CharField(max_length=2)
+    state = models.CharField(max_length=25)
     zipcode = models.CharField(max_length=50)
     website = models.URLField(
         max_length=255, blank=True, help_text="Enter your website or link for letting clients get in touch")
     profession = models.CharField(max_length=50, blank=True)
 
     # slug
-    slug = models.SlugField(null=True, unique=True, blank=True)
+    slug = models.SlugField(null=False, unique=True, blank=True)
     
     # TODO Locations:
     # country = 
@@ -74,8 +74,11 @@ class Person(models.Model):
 
     # ABSOLUTE URL METHOD
     def get_absolute_url(self):
-        """Returns the url to access a particular detail listing page."""
-        return reverse('directory:person-detail', args=[str(self.id)])
+        """Returns the url to access a particular detail person page via slug."""
+        return reverse('directory:person-detail', kwargs={'slug': self.slug})
+        """Returns the url to access a particular detail person page via id."""
+        # return reverse('directory:person-detail', args=[str(self.id)])
+
 
     # OTHER METHODS
     def full_name(self):
