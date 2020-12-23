@@ -1,1 +1,1 @@
-web: gunicorn ptin-directory.wsgi --log-file -
+web: gunicorn core.wsgi --log-file -
