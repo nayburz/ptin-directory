@@ -27,6 +27,8 @@ class SearchResultsView(ListView):
         query_list = Person.objects.all()
         
 
+    # puts together first name and last name
+
         if query:
             query_list = query_list.annotate(
                 full_name=Concat(

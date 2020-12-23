@@ -7,6 +7,11 @@ from urllib.parse import urlparse
 
 
 
+
+
+
+
+
 class Person(models.Model):
 
 
@@ -31,6 +36,9 @@ class Person(models.Model):
     website = models.URLField(
         max_length=255, blank=True, help_text="Enter your website or link for letting clients get in touch")
     profession = models.CharField(max_length=50, blank=True)
+
+    # slug
+    slug = models.SlugField(null=True, unique=True, blank=True)
     
     # TODO Locations:
     # country = 
@@ -48,6 +56,8 @@ class Person(models.Model):
     # facebook = 
     # twitter =
     # LinkedIn = 
+
+
 
     # META CLASS
     class Meta:
@@ -72,6 +82,7 @@ class Person(models.Model):
         """String for representing the Model object."""
         return f'{self.first_name} {self.last_name}'
 
+
     def full_address(self):
         """String for representing the Model object."""
         return f'{self.address}, {self.city}'
@@ -87,3 +98,6 @@ class Person(models.Model):
     def url_text(self):
         parsed_url = urlparse(self.website)
         return parsed_url.hostname.replace("www.", "")
+
+
+

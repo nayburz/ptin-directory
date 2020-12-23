@@ -5,3 +5,5 @@ change colors, font, themes, make it look different than the themeforst
 Search
 
 API
+
+Slugify 'first_name' + 'last_name'
