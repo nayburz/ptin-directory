@@ -4,6 +4,22 @@ from django.db import models
 from django.shortcuts import reverse
 from urllib.parse import urlparse
 from django.template.defaultfilters import slugify
+# from us import statenames
+
+
+
+# class State(models.Model):
+
+#     us_states = models.CharField(choices=sorted(statenames.items()), max_length=2, blank=True, db_index=True)
+
+#     def get_absolute_url(self):
+#         """Returns the url to access a particular author instance."""
+#         return reverse('author-detail', args=[str(self.id)])
+
+#     def __str__(self):
+#         """String for representing the Model object."""
+#         return f'{self.us_states}'
+
 
 
 
@@ -33,7 +49,7 @@ class Person(models.Model):
         max_length=255, blank=True, help_text="Enter your street address.")
     city = models.CharField(
         max_length=255, blank=True, help_text="Enter your city.")
-    state = models.CharField(max_length=25)
+    state = models.CharField(max_length=25) # The state is declared as ForeignKey, so each person will only have one state, but a state may have many persons 
     zipcode = models.CharField(max_length=50)
     website = models.URLField(
         max_length=255, blank=True, help_text="Enter your website or link for letting clients get in touch")
