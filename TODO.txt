@@ -1,0 +1,7 @@
+Remove Animate JS? No JS silly animation needed
+Check static for unsed CSS
+change colors, font, themes, make it look different than the themeforst
+
+Search
+
+API
