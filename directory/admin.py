@@ -5,7 +5,7 @@ from import_export.admin import ImportExportModelAdmin
 
 class PersonAdmin(ImportExportModelAdmin, admin.ModelAdmin):
     list_display = ('last_name', 'first_name', 'state')
-    fields  = ('last_name', 'first_name')
+    
 
 
     # for slug to prepopulate in admin. 
