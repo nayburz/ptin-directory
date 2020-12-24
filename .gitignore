@@ -4,6 +4,8 @@
 
 TODO.txt
 color_pal.jpg
+.vscode
+local_settings.py
 
 ### Django ###
 *.log
