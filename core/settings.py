@@ -126,3 +126,10 @@ SITE_ID = 1
 
 # Activate Django-Heroku.
 django_heroku.settings(locals())
+
+# Local settings
+
+try:
+    from .local_settings import *
+except ImportError:
+    pass
