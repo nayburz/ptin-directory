@@ -129,7 +129,3 @@ django_heroku.settings(locals())
 
 # Local settings
 
-try:
-    from .local_settings import *
-except ImportError:
-    pass

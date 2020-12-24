@@ -43,14 +43,31 @@ class SearchResultsView(ListView):
                 Q(full_name__icontains=query)
 
         )
+
+
+        # State
+        if 'region' in self.request.GET:
+            state = self.request.GET['region']
+            if state:
+                query_list = query_list.filter(state__iexact=state)      
+        
         return query_list
 
 
-# class StateView(ListView):
-#     model = Person
-#     template_name = "state_lists.html"
+    # def get_state_queryset(self): # new
+    #         return Person.objects.filter(
+    #             Q(state__iexact='Montana')
+    #         )
 
-#     def get_queryset(self):
-#         self.state = get_object_or_404(Person, state=self.kwargs['state'])
-#         return Person.objects.filter(state=self.state)
+        
+        
+
+
+class StateView(ListView):
+    model = Person
+    template_name = "state_lists.html"
+
+    def get_state_queryset(self):
+        self.state = get_object_or_404(Person, state=self.kwargs['state'])
+        return Person.objects.filter(state=self.state)
 

@@ -29,23 +29,25 @@
 						<div class="form-search">
 							<form action="{% url 'directory:search_results' %}" method="get">
 								<div class="row align-items-end">
+                                <!--Form 1-->
 									<div class=" col-xl-6 mb-4 mb-xl-0">
 										<label for="key-word"
 										       class="text-uppercase text-white font-weight-bold">Accountants Name:</label>
 										<div class="input-group dropdown show bg-white rounded">
-											<input type="search" autocomplete="off" name="q"
+											<input type="search" autocomplete="off" name="q" id="q"
 											       class="form-control border-0 form-control-lg"
 											       placeholder="Accountants Name or company"
 											       aria-haspopup="true">
 										</div>
 									</div>
+                                <!--Form 2-->
 									<div class=" col-xl-4 mb-4 mb-xl-0">
 										<label for="region"
 										       class="text-uppercase text-white font-weight-bold">where</label>
 										<div class="input-group dropdown bg-white rounded">
-											<input type="text" autocomplete="off" id="region" name="region"
+											<input type="search" autocomplete="off" id="region" name="region"
 											       class="form-control font-size-lg border-0 form-control-lg"
-											       placeholder="Town, city or postcode" data-toggle="dropdown"
+											       placeholder="State or town" data-toggle="dropdown"
 											       aria-haspopup="true">
 											<a href="#" class="input-group-append text-decoration-none">
 												<i class="fal fa-chevron-down"></i>
@@ -56,58 +58,18 @@
 														Austin
 													</a>
 												</li>
-												<li class="dropdown-item item">
-													<a href="#" class="link-hover-dark-white">
-														Boston
-													</a>
-												</li>
-												<li class="dropdown-item item">
-													<a href="#" class="link-hover-dark-white">
-														Chicago
-													</a>
-												</li>
-												<li class="dropdown-item item">
-													<a href="#" class="link-hover-dark-white">
-														Denver
-													</a>
-												</li>
-												<li class="dropdown-item item">
-													<a href="#" class="link-hover-dark-white">
-														Los Angeles
-													</a>
-												</li>
-												<li class="dropdown-item item">
-													<a href="#" class="link-hover-dark-white">
-														New York
-													</a>
-												</li>
-												<li class="dropdown-item item">
-													<a href="#" class="link-hover-dark-white">
-														San Francisco
-													</a>
-												</li>
-												<li class="dropdown-item item">
-													<a href="#" class="link-hover-dark-white">
-														Seattle
-													</a>
-												</li>
-												<li class="dropdown-item item">
-													<a href="#" class="link-hover-dark-white">
-														Washington
-													</a>
-												</li>
 											</ul>
 										</div>
 									</div>
 									<div class=" col-xl-2">
 										<button type="submit"
 										        class="btn btn-primary font-weight-bold font-size-h5 btn-block btn-icon-left btn-lg lh-16">
-											<i
-													class="fal fa-search"></i>Search
+											<i class="fal fa-search"></i>Search
 										</button>
 									</div>
 
 								</div>
+							<!--advanced search-->
 								<div class="advance-search mt-7">
 									<a class="text-uppercase text-white font-weight-bold text-decoration-none"
 									   data-toggle="collapse" href="#advanceSearch" role="button"
@@ -217,6 +179,7 @@
 										</div>
 									</div>
 								</div>
+								
 							</form>
 						</div>
 

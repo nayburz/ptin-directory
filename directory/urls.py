@@ -5,6 +5,7 @@ from .views import (
     DirectoryListView, 
     DirectoryDetailView, 
     SearchResultsView, 
+    StateView,
     
 
 )
@@ -15,7 +16,7 @@ urlpatterns = [
     
     path('', HomePageView.as_view(), name='home'),
     path('ptin-directory/', DirectoryListView.as_view(), name='directory-list'),
-    # path('ptin-directory/<state>/', StateView.as_view()),   
+    path('ptin-directory/<state>/', StateView.as_view()),   
     path('ptin-directory/<slug:slug>/', DirectoryDetailView.as_view(), name='person-detail'),
     path('search/', SearchResultsView.as_view(), name='search_results'),
     
