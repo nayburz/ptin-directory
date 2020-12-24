@@ -10,8 +10,10 @@
 <!-- content-wrapper start -->
 <div class="content-wrap">
     <section class="banner">
+    
         <div class="container">
             <div class="banner-content">
+
                 <div class="heading">
                     <h1 class="text-white lh-1 mb-3 text-uppercase">
                         <span class="d-block">FIND OUT IF YOUR ACCOUNTANT</span>
@@ -21,38 +23,208 @@
                         Search Below for Over 700,000 CPAs, Enrolled Agents & Registered Tax Pros
                     </p>
                 </div>
+
                 <!-- search starts -->
-                <div class="form-search">
-                    <form action="{% url 'directory:search_results' %}" method="get">
-                        <div class="row align-items-end">
-                            <div class=" col-xl-6 mb-4 mb-xl-0">
-                                <label for="key-word"
-                                        class="text-uppercase text-white font-weight-bold">Accountants Name:</label>
-                                     <div class="input-group dropdown show bg-white rounded">
-                                        <input type="search" autocomplete="off" name="q"
-                                                class="form-control border-0 form-control-lg"
-                                                placeholder="Name or company" 
-                                                {% comment %} data-toggle="dropdown" {% endcomment %}
-                                                aria-haspopup="true">
-                                    </div>
-                            </div>
 
-                            <div class=" col-xl-2">
-                                <button type="submit"
-                                        class="btn btn-primary font-weight-bold font-size-h5 btn-block btn-icon-left btn-lg lh-16">
-                                    <i class="fal fa-search"></i>Search
-                                </button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
+						<div class="form-search">
+							<form action="{% url 'directory:search_results' %}" method="get">
+								<div class="row align-items-end">
+									<div class=" col-xl-6 mb-4 mb-xl-0">
+										<label for="key-word"
+										       class="text-uppercase text-white font-weight-bold">Accountants Name:</label>
+										<div class="input-group dropdown show bg-white rounded">
+											<input type="search" autocomplete="off" name="q"
+											       class="form-control border-0 form-control-lg"
+											       placeholder="Accountants Name or company"
+											       aria-haspopup="true">
+										</div>
+									</div>
+									<div class=" col-xl-4 mb-4 mb-xl-0">
+										<label for="region"
+										       class="text-uppercase text-white font-weight-bold">where</label>
+										<div class="input-group dropdown bg-white rounded">
+											<input type="text" autocomplete="off" id="region" name="region"
+											       class="form-control font-size-lg border-0 form-control-lg"
+											       placeholder="Town, city or postcode" data-toggle="dropdown"
+											       aria-haspopup="true">
+											<a href="#" class="input-group-append text-decoration-none">
+												<i class="fal fa-chevron-down"></i>
+											</a>
+											<ul class="dropdown-menu form-search-ajax" aria-labelledby="region">
+												<li class="dropdown-item item">
+													<a href="#" class="link-hover-dark-white">
+														Austin
+													</a>
+												</li>
+												<li class="dropdown-item item">
+													<a href="#" class="link-hover-dark-white">
+														Boston
+													</a>
+												</li>
+												<li class="dropdown-item item">
+													<a href="#" class="link-hover-dark-white">
+														Chicago
+													</a>
+												</li>
+												<li class="dropdown-item item">
+													<a href="#" class="link-hover-dark-white">
+														Denver
+													</a>
+												</li>
+												<li class="dropdown-item item">
+													<a href="#" class="link-hover-dark-white">
+														Los Angeles
+													</a>
+												</li>
+												<li class="dropdown-item item">
+													<a href="#" class="link-hover-dark-white">
+														New York
+													</a>
+												</li>
+												<li class="dropdown-item item">
+													<a href="#" class="link-hover-dark-white">
+														San Francisco
+													</a>
+												</li>
+												<li class="dropdown-item item">
+													<a href="#" class="link-hover-dark-white">
+														Seattle
+													</a>
+												</li>
+												<li class="dropdown-item item">
+													<a href="#" class="link-hover-dark-white">
+														Washington
+													</a>
+												</li>
+											</ul>
+										</div>
+									</div>
+									<div class=" col-xl-2">
+										<button type="submit"
+										        class="btn btn-primary font-weight-bold font-size-h5 btn-block btn-icon-left btn-lg lh-16">
+											<i
+													class="fal fa-search"></i>Search
+										</button>
+									</div>
 
-                <!--form ends-->
+								</div>
+								<div class="advance-search mt-7">
+									<a class="text-uppercase text-white font-weight-bold text-decoration-none"
+									   data-toggle="collapse" href="#advanceSearch" role="button"
+									   aria-expanded="false">advance search<i class="fal fa-chevron-down"></i></a>
+								</div>
+								<div id="advanceSearch" class="collapse form-advance-search mt-4">
+									<div class="row">
+										<div class="col-md-6 mb-4 mb-md-0 text-center text-md-left">
+											<div class="form-group">
+												<div class="form-label text-white font-weight-bold text-uppercase mb-2">Filter by tags</div>
+												<div class="row">
+													<div class="col-md-4">
+														<div class="custom-control custom-checkbox lh-19">
+															<input class="custom-control-input" type="checkbox"
+															       id="bike-parking">
+															<label class="custom-control-label text-white" for="bike-parking">
+																Bike Parking
+															</label>
 
+														</div>
+														<div class="custom-control custom-checkbox lh-19">
+															<input class="custom-control-input" type="checkbox"
+															       id="contact">
+															<label class="custom-control-label text-white" for="contact">
+																Contact Form
+															</label>
 
+														</div>
+														<div class="custom-control custom-checkbox lh-19">
+															<input class="custom-control-input" type="checkbox"
+															       id="coupons">
+															<label class="custom-control-label text-white" for="coupons">
+																Coupons
+															</label>
+
+														</div>
+													</div>
+													<div class="col-md-4">
+														<div class="custom-control custom-checkbox lh-19">
+															<input class="custom-control-input" type="checkbox"
+															       id="free-entrance">
+															<label class="custom-control-label text-white" for="free-entrance">
+																Free Entrance
+															</label>
+
+														</div>
+														<div class="custom-control custom-checkbox lh-19">
+															<input class="custom-control-input" type="checkbox"
+															       id="italian">
+															<label class="custom-control-label text-white" for="italian">
+																Italian
+															</label>
+
+														</div>
+														<div class="custom-control custom-checkbox lh-19">
+															<input class="custom-control-input" type="checkbox"
+															       id="parking">
+															<label class="custom-control-label text-white" for="parking">
+																Parking Street
+															</label>
+
+														</div>
+													</div>
+													<div class="col-md-4">
+														<div class="custom-control custom-checkbox lh-19">
+															<input class="custom-control-input" type="checkbox"
+															       id="pets">
+															<label class="custom-control-label text-white" for="pets">
+																Pets Friendly
+															</label>
+
+														</div>
+														<div class="custom-control custom-checkbox lh-19">
+															<input class="custom-control-input" type="checkbox"
+															       id="smoking">
+															<label class="custom-control-label text-white" for="smoking">
+																Smoking Allowed
+															</label>
+
+														</div>
+														<div class="custom-control custom-checkbox lh-19">
+															<input class="custom-control-input" type="checkbox"
+															       id="wireless">
+															<label class="custom-control-label text-white" for="wireless">
+																Wireless Internet
+															</label>
+
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class=" col-md-4 mb-4 mb-md-0 text-center text-md-left">
+											<div class="price-range">
+												<label
+                                                       class="form-label text-white font-weight-bold text-uppercase">
+                                                    Price Range
+                                                </label>
+												<div class="price-range-wrapper d-flex flex-column justify-content-center">
+													<div id="price" data-slider="true"
+													     data-slider-options='{"min":0,"max":4000,"values":[0,2000]}'></div>
+													<div class="description mt-3 text-white">
+														From <input type="text" readonly class="amount border-0">
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</form>
+						</div>
+
+            <!--Search ends-->
 
             </div>
         </div>
+    
     </section>
 </div>
 <!-- .content-wrapper end -->
